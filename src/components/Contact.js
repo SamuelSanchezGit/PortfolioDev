@@ -35,6 +35,9 @@ const Contact = () => {
         className="w-full max-w-md"
       >
         <input type="hidden" name="form-name" value="contact" />
+        <div className="hidden">
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
             Nom
