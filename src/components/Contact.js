@@ -8,16 +8,20 @@ const Contact = () => {
     const form = e.target;
     const data = new FormData(form);
 
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString(),
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/mvgpaeyv', { // Remplacez par votre Formspree endpoint
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new URLSearchParams(data).toString(),
+      });
 
-    if (response.ok) {
-      form.reset();
-      setStatus('Merci pour votre message !');
-    } else {
+      if (response.ok) {
+        form.reset();
+        setStatus('Merci pour votre message !');
+      } else {
+        setStatus('Oups ! Une erreur est survenue. Veuillez réessayer.');
+      }
+    } catch (error) {
       setStatus('Oups ! Une erreur est survenue. Veuillez réessayer.');
     }
   };
@@ -27,17 +31,9 @@ const Contact = () => {
       <h1 className="text-4xl font-bold mb-4">Contactez-moi</h1>
       <p className="text-lg mb-8">Si vous avez des questions ou souhaitez me contacter, n'hésitez pas à m'envoyer un message.</p>
       <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="w-full max-w-md"
       >
-        <input type="hidden" name="form-name" value="contact" />
-        <div className="hidden">
-          <label>Don’t fill this out: <input name="bot-field" /></label>
-        </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
             Nom
