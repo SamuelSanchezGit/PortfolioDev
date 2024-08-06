@@ -9,10 +9,10 @@ const Contact = () => {
     const data = new FormData(form);
 
     try {
-      const response = await fetch('https://formspree.io/f/mvgpaeyv', { // Remplacez par votre Formspree endpoint
+      const response = await fetch('https://formspree.io/f/mvgpaeyv', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
-        body: new URLSearchParams(data).toString(),
+        body: JSON.stringify(Object.fromEntries(data.entries())),
       });
 
       if (response.ok) {
