@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* HEADER */ 
+
+/* Styles supplémentaires pour le menu burger */
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #00bfff;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+header nav.md\\:hidden {
+  background: linear-gradient(135deg, #1e1e1e, #333);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Ajoute ces styles pour améliorer le design du header */
+header {
+  background: linear-gradient(135deg, #1e1e1e, #333);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #00bfff; /* Changer la couleur de survol en bleu */
+  text-shadow: 0 0 5px #00bfff;
+}
+
+header .logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+header .menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header .menu-icon {
+    display: block;
+  }
+
+  header nav {
+    display: none;
+  }
+}
+
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* FOOTER */ 
+
+/* Ajoute ces styles pour améliorer le design du footer */
+footer {
+  background: linear-gradient(135deg, #1e1e1e, #333);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #00bfff; /* Changer la couleur de survol en bleu */
+  text-shadow: 0 0 5px #00bfff;
+}
+
+footer .logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+footer img {
+  transition: all 0.3s ease-in-out;
+}
+
+footer img:hover {
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(170deg) brightness(100%) contrast(97%);
+}
+
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (min-width: 1280px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
