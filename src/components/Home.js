@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import projectImage1 from '../assets/portfolio2dgame.png';
 import projectImage2 from '../assets/craftify.png';
 import projectImage3 from '../assets/theshop.png';
+import projectImage4 from '../assets/serveurwowtest.png'; // Importer l'image du projet
 
 const Home = () => {
   const settings = {
@@ -40,6 +41,12 @@ const Home = () => {
           description="Une concession pour un serveur RP, avec un catalogue fonctionnel contenant les données des voitures."
           imageUrl={projectImage3}
           projectUrl="https://theshopny.netlify.app/"
+        />
+        <Project 
+          title="Serveur Privé WoW"
+          description="Un test de construction d'un site web pour un serveur privé WoW."
+          imageUrl={projectImage4}
+          projectUrl="https://serveurwowtest.netlify.app/"
         />
       </Slider>
     </div>
